@@ -1,0 +1,122 @@
+.file-explorer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* ===== 顶栏 ===== */
+.file-explorer-topbar {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  height: var(--topbar-height);
+  padding: 0 var(--spacing-md);
+  border-bottom: 1px solid var(--color-border-soft);
+  background: var(--color-bg);
+  flex-shrink: 0;
+}
+
+.file-explorer-nav {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.file-explorer-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  flex-shrink: 0;
+}
+
+.view-mode-toggle {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  height: 32px;
+}
+
+.view-mode-btn {
+  width: 32px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-3);
+  transition:
+    background var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.view-mode-btn:hover:not(:disabled) {
+  background: var(--color-bg-hover);
+  color: var(--color-text-1);
+}
+
+.view-mode-btn.active {
+  background: var(--color-bg-mute);
+  color: var(--color-text-1);
+}
+
+.view-mode-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ===== 主内容 ===== */
+.file-explorer-content {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.file-explorer-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  height: 100%;
+  color: var(--color-text-3);
+}
+
+.file-explorer-loading svg {
+  animation: spin 1.2s linear infinite;
+}
+
+/* ===== 空状态（未选磁盘） ===== */
+.file-explorer-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-md);
+  height: 100%;
+  color: var(--color-text-3);
+  text-align: center;
+  padding: var(--spacing-2xl);
+}
+
+.file-explorer-empty h2 {
+  font-size: var(--font-size-xl);
+  font-weight: 500;
+  color: var(--color-text-1);
+}
+
+.file-explorer-empty p {
+  font-size: var(--font-size-md);
+  color: var(--color-text-2);
+  max-width: 320px;
+}
+
+.file-explorer-empty .btn {
+  margin-top: var(--spacing-sm);
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

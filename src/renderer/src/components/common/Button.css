@@ -1,0 +1,94 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-xs);
+  border: 1px solid var(--color-border);
+  background: var(--color-bg);
+  color: var(--color-text-1);
+  border-radius: var(--radius-md);
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    background var(--transition-fast),
+    border-color var(--transition-fast),
+    color var(--transition-fast);
+  white-space: nowrap;
+  user-select: none;
+}
+
+.btn:hover:not(:disabled) {
+  background: var(--color-bg-hover);
+  border-color: var(--color-border-strong);
+}
+
+.btn:active:not(:disabled) {
+  background: var(--color-bg-active);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* 尺寸 */
+.btn-md {
+  height: 32px;
+  padding: 0 var(--spacing-md);
+  font-size: var(--font-size-md);
+}
+
+.btn-sm {
+  height: 26px;
+  padding: 0 var(--spacing-sm);
+  font-size: var(--font-size-sm);
+}
+
+.btn-icon-only.btn-md {
+  width: 32px;
+  padding: 0;
+}
+
+.btn-icon-only.btn-sm {
+  width: 26px;
+  padding: 0;
+}
+
+.btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 变体 */
+.btn-primary {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-accent-text);
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: var(--color-accent-hover);
+  border-color: var(--color-accent-hover);
+}
+
+.btn-ghost {
+  border-color: transparent;
+  background: transparent;
+}
+
+.btn-ghost:hover:not(:disabled) {
+  background: var(--color-bg-hover);
+  border-color: transparent;
+}
+
+.btn-danger {
+  color: var(--color-danger);
+  border-color: var(--color-border);
+}
+
+.btn-danger:hover:not(:disabled) {
+  background: var(--color-danger-bg);
+  border-color: var(--color-danger);
+  color: var(--color-danger);
+}

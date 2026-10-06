@@ -1,0 +1,129 @@
+.file-list {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* ===== 表头 ===== */
+.file-list-header {
+  display: grid;
+  grid-template-columns: 1fr 100px 160px;
+  height: 32px;
+  border-bottom: 1px solid var(--color-border);
+  flex-shrink: 0;
+  background: var(--color-bg);
+}
+
+.file-list-th {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: 0 var(--spacing-md);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-2);
+  font-weight: 500;
+  text-align: left;
+  transition: color var(--transition-fast);
+  border-right: 1px solid var(--color-border-soft);
+}
+
+.file-list-th:last-child {
+  border-right: none;
+}
+
+.file-list-th:hover {
+  color: var(--color-text-1);
+}
+
+.file-list-th.sorted {
+  color: var(--color-text-1);
+}
+
+.file-list-th.size {
+  justify-content: flex-end;
+}
+
+.file-list-sort-icon {
+  flex-shrink: 0;
+}
+
+/* ===== 列表体 ===== */
+.file-list-body {
+  flex: 1;
+  overflow-y: auto;
+  min-height: 0;
+}
+
+.file-list-row {
+  display: grid;
+  grid-template-columns: 1fr 100px 160px;
+  height: 32px;
+  align-items: center;
+  cursor: default;
+  transition: background var(--transition-fast);
+  border-bottom: 1px solid transparent;
+}
+
+.file-list-row:hover {
+  background: var(--color-bg-hover);
+}
+
+.file-list-row.selected {
+  background: var(--color-bg-mute);
+}
+
+.file-list-row.selected:hover {
+  background: var(--color-bg-active);
+}
+
+.file-list-td {
+  padding: 0 var(--spacing-md);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-size: var(--font-size-md);
+}
+
+.file-list-td.size {
+  justify-content: flex-end;
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-sm);
+}
+
+.file-list-td.mtime {
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-sm);
+}
+
+.file-icon {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  color: var(--color-text-2);
+}
+
+.file-icon.directory {
+  color: var(--color-text-1);
+}
+
+.file-name {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ===== 空状态 ===== */
+.file-list-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  height: 100%;
+  color: var(--color-text-3);
+  font-size: var(--font-size-md);
+}

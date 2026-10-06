@@ -1,0 +1,111 @@
+.media-library {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* ===== 顶栏 ===== */
+.media-library-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-md);
+  height: var(--topbar-height);
+  padding: 0 var(--spacing-md);
+  border-bottom: 1px solid var(--color-border-soft);
+  background: var(--color-bg);
+  flex-shrink: 0;
+}
+
+.media-library-filters {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  background: var(--color-bg-soft);
+  padding: 3px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border-soft);
+}
+
+.filter-btn {
+  height: 26px;
+  padding: 0 var(--spacing-md);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-2);
+  border-radius: var(--radius-sm);
+  transition:
+    background var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.filter-btn:hover {
+  color: var(--color-text-1);
+}
+
+.filter-btn.active {
+  background: var(--color-bg);
+  color: var(--color-text-1);
+  font-weight: 500;
+  box-shadow: var(--shadow-sm);
+}
+
+.media-library-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+/* ===== 主内容 ===== */
+.media-library-content {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: var(--spacing-md);
+}
+
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+/* ===== 加载/空状态 ===== */
+.media-library-loading,
+.media-library-empty-result,
+.media-library-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-md);
+  height: 100%;
+  color: var(--color-text-3);
+  text-align: center;
+  padding: var(--spacing-2xl);
+}
+
+.media-library-loading svg {
+  animation: spin 1.2s linear infinite;
+}
+
+.media-library-empty h2 {
+  font-size: var(--font-size-xl);
+  font-weight: 500;
+  color: var(--color-text-1);
+}
+
+.media-library-empty p {
+  font-size: var(--font-size-md);
+  color: var(--color-text-2);
+  max-width: 320px;
+}
+
+.media-library-empty-result {
+  font-size: var(--font-size-md);
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

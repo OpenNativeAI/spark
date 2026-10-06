@@ -1,0 +1,64 @@
+.statusbar {
+  height: var(--statusbar-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--spacing-md);
+  background: var(--color-bg-soft);
+  border-top: 1px solid var(--color-border-soft);
+  font-size: var(--font-size-xs);
+  color: var(--color-text-3);
+  flex-shrink: 0;
+  gap: var(--spacing-md);
+}
+
+.statusbar-left,
+.statusbar-right {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  min-width: 0;
+}
+
+.statusbar-right {
+  flex-shrink: 1;
+  overflow: hidden;
+}
+
+.statusbar-item {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  white-space: nowrap;
+}
+
+.statusbar-path {
+  font-family: var(--font-family-mono);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 400px;
+}
+
+.statusbar-divider {
+  color: var(--color-text-disabled);
+}
+
+.statusbar-scanning {
+  color: var(--color-text-2);
+}
+
+.statusbar-scanning svg {
+  animation: spin 1.2s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.statusbar-portable {
+  color: var(--color-text-2);
+  background: var(--color-bg-mute);
+  padding: 1px 6px;
+  border-radius: var(--radius-sm);
+}
